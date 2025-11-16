@@ -1,0 +1,17 @@
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-groq
+groq
+sentence-transformers
+faiss-cpu
+rank-bm25
+python-docx
+tavily-python
+python-dotenv
+requests
+numpy
+pandas
+pydantic
+typing-extensions
