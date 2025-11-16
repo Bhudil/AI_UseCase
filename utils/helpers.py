@@ -1,7 +1,3 @@
-"""
-Helper utilities for the chatbot application.
-"""
-
 import sys
 import os
 import hashlib
@@ -43,29 +39,10 @@ def format_chat_history(history, max_turns=CHAT_HISTORY_CONTEXT_TURNS):
 
 
 def get_cache_key(text):
-    """
-    Generate a cache key for a given text.
-    
-    Args:
-        text (str): Text to hash
-    
-    Returns:
-        str: SHA-256 hash of the text
-    """
     return hashlib.sha256(text.lower().strip().encode()).hexdigest()
 
 
 def format_sources(pages=None, web_results=None):
-    """
-    Format source citations for response.
-    
-    Args:
-        pages (list): List of page numbers from documents
-        web_results (dict): Web search results
-    
-    Returns:
-        str: Formatted source citations
-    """
     sources = []
     
     # Add document pages
