@@ -1,8 +1,3 @@
-"""
-Smart Question Generator
-Generate relevant questions based on document content.
-"""
-
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -11,16 +6,6 @@ from models.llm import get_chatgroq_model
 
 
 def generate_insightful_questions(document_content, num_questions=3):
-    """
-    Generate insightful questions based on document content.
-    
-    Args:
-        document_content (str): Document to analyze
-        num_questions (int): Number of questions to generate (default: 3)
-    
-    Returns:
-        list: List of generated questions
-    """
     try:
         llm = get_chatgroq_model("Detailed")
         
@@ -60,15 +45,6 @@ QUESTIONS:"""
 
 
 def generate_document_summary(document_content):
-    """
-    Generate a comprehensive summary of the document.
-    
-    Args:
-        document_content (str): Document content
-    
-    Returns:
-        str: Generated summary
-    """
     try:
         llm = get_chatgroq_model("Detailed")
         
