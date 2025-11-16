@@ -12,15 +12,6 @@ from models.embeddings import get_embedding_model
 
 
 def process_document(file):
-    """
-    Process uploaded document and create FAISS index.
-    
-    Args:
-        file: Uploaded file object
-    
-    Returns:
-        tuple: (vectorstore, bm25_index, corpus_docs, success_message)
-    """
     try:
         embeddings = get_embedding_model()
         
@@ -64,12 +55,6 @@ def process_document(file):
 
 
 def load_existing_vectorstore():
-    """
-    Load existing vectorstore from disk.
-    
-    Returns:
-        FAISS vectorstore or None
-    """
     try:
         if os.path.exists(DB_FAISS_PATH):
             embeddings = get_embedding_model()
