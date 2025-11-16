@@ -1,7 +1,3 @@
-"""
-Web search functionality using Tavily API.
-"""
-
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -11,15 +7,6 @@ from config.config import TAVILY_API_KEY
 
 
 def search_web(query):
-    """
-    Perform web search using Tavily.
-    
-    Args:
-        query (str): Search query
-    
-    Returns:
-        dict: Search results with 'success', 'answer', and 'results'
-    """
     try:
         client = TavilyClient(api_key=TAVILY_API_KEY)
         response = client.search(
@@ -43,15 +30,6 @@ def search_web(query):
 
 
 def should_use_web_search(query):
-    """
-    Determine if a query should trigger web search.
-    
-    Args:
-        query (str): User query
-    
-    Returns:
-        bool: True if web search should be used
-    """
     keywords = [
         "current", "latest", "recent", "today", "now", "news",
         "weather", "stock", "price", "score", "update",
@@ -63,15 +41,6 @@ def should_use_web_search(query):
 
 
 def format_search_for_context(search_results):
-    """
-    Format search results to be included in LLM context.
-    
-    Args:
-        search_results (dict): Search results from search_web()
-    
-    Returns:
-        str: Formatted context string
-    """
     if not search_results.get("success"):
         return ""
     
