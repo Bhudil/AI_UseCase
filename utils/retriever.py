@@ -1,7 +1,3 @@
-"""
-Hybrid retrieval system combining FAISS and BM25.
-"""
-
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -10,19 +6,6 @@ from config.config import RETRIEVAL_K
 
 
 def hybrid_retrieve(query, vectorstore, bm25_index, corpus_docs, k=RETRIEVAL_K):
-    """
-    Retrieve relevant documents using hybrid search.
-    
-    Args:
-        query (str): Search query
-        vectorstore: FAISS vectorstore
-        bm25_index: BM25 index
-        corpus_docs: List of document chunks
-        k (int): Number of documents to retrieve
-    
-    Returns:
-        list: Top k most relevant documents
-    """
     if not vectorstore:
         return []
     
@@ -89,19 +72,6 @@ def hybrid_retrieve(query, vectorstore, bm25_index, corpus_docs, k=RETRIEVAL_K):
 
 
 def retrieve_context(query, vectorstore, bm25_index, corpus_docs, k=RETRIEVAL_K):
-    """
-    Retrieve context for a query.
-    
-    Args:
-        query (str): Search query
-        vectorstore: FAISS vectorstore
-        bm25_index: BM25 index
-        corpus_docs: List of document chunks
-        k (int): Number of documents to retrieve
-    
-    Returns:
-        tuple: (context_string, relevant_pages)
-    """
     try:
         # Retrieve documents
         docs = hybrid_retrieve(query, vectorstore, bm25_index, corpus_docs, k)
