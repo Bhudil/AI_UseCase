@@ -1,7 +1,3 @@
-"""
-Document processing utilities for RAG system.
-"""
-
 import sys
 import os
 import tempfile
@@ -9,7 +5,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from rank_bm25 import BM25Okapi
 from config.config import CHUNK_SIZE, CHUNK_OVERLAP, DB_FAISS_PATH
 from models.embeddings import get_embedding_model
