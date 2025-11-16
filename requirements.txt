@@ -7,7 +7,7 @@ groq==0.4.2
 sentence-transformers==2.3.1
 faiss-cpu==1.7.4
 rank-bm25==0.2.2
-pypdf2==3.0.1
+pypdf==3.17.0
 tavily-python==0.3.3
 python-dotenv==1.0.0
 requests==2.31.0
